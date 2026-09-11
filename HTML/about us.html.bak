@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tech news</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/glass-panel.css">
+</head>
+<body>
+  <input type="checkbox" id="login-btn" hidden>
+  <nav class="main_nav">
+    <input type="checkbox" id="hamburger" hidden>
+    <label for="hamburger" class="hamburger-icon"><svg viewBox="0 0 24 24" width="35" height="35" stroke="#00ffff" stroke-width="2" fill="none">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg></label>
+    <ul class="nav_link"><li><a href="index.html">Home</a></li>
+    <li><a href=""></a>media</li>
+<li><a href="about us.html">about</a> </li>
+<li><a href="sign up.html">sign up</a></li>
+<li><a href="../HTML/contact.html">contact us</a></li>
+<label id="lgin" for="login-btn">log in</label></ul>
+  </nav>  
+  <div class="outer_glass" >
+    <label for="login-btn" id="hiddenlabel"></label>
+    <div class="glass_panel">
+      
+      <h2>log in</h2>
+     <form action=""> <input type="text" id="user" class="loginput" placeholder="Enter your username" required>
+      <br>
+      <input type="password" id="pass" class="loginput" placeholder="Enter password" required>
+      <br>
+      <button type="submit" class="loginput" id="lginbut">log in</button></form>
+  
+    </div>
+  </div>
+ 
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/sweetalert2.all.min.js"></script>
+  <footer><p>&copy; all rights reserved for tech CO</p></footer>
+ <script>
+ 
+    </script>
+</body>
+</html>

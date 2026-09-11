@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tech news</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/glass-panel.css">
+</head>
+<body>
+  <input type="checkbox" id="login-btn" hidden>
+  <nav class="main_nav">
+    <input type="checkbox" id="hamburger" hidden>
+    <label for="hamburger" class="hamburger-icon"><svg viewBox="0 0 24 24" width="35" height="35" stroke="#00ffff" stroke-width="2" fill="none">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg></label>
+    <ul class="nav_link"><li><a href="index.html">Home</a></li>
+    <li><a href="../HTML/media.html">media</a></li>
+<li><a href="about us.html">about</a> </li>
+<li><a href="sign up.html">sign up</a></li>
+<li><a href="../HTML/contact.html">contact us</a></li>
+<label id="lgin" for="login-btn">log in</label></ul>
+  </nav>  
+  <div class="outer_glass" >
+    <label for="login-btn" id="hiddenlabel"></label>
+    <div class="glass_panel">
+      
+      <h2>log in</h2>
+     <form action=""> <input type="text" id="user" class="loginput" placeholder="Enter your username" required>
+      <br>
+      <input type="password" id="pass" class="loginput" placeholder="Enter password" required>
+      <br>
+      <button type="submit" class="loginput" id="lginbut">log in</button></form>
+  
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="glass_panel p-4">
+                <h3 class="text-center mb-4">Create Account</h3>
+                
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/sweetalert2.all.min.js"></script>
+  <footer><p>&copy; all rights reserved for tech CO</p></footer>
+ <script>
+ $(document).ready(function () {
+    $('#signupForm').submit(function (e) {
+        // Stop the form from submitting normally
+        e.preventDefault(); 
+        
+        // Get the values from the input fields
+        var name = $('#username').val();
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var confirmPassword = $('#confirmPassword').val();
+        
+        // Validation Logic
+        if (name === "" || email === "" || password === "") {
+            // Check if anything is left blank
+            Swal.fire('Error', 'Please fill in all fields!', 'error');
+            
+        } else if (password.length < 6) {
+            // Check password length
+            Swal.fire('Error', 'Password must be at least 6 characters.', 'error');
+            
+        } else if (password !== confirmPassword) {
+            // Check if passwords match
+            Swal.fire('Error', 'Passwords do not match!', 'error');
+            
+        } else {
+            // If everything is correct, show success alert
+            Swal.fire('Success!', 'Your account has been created.', 'success');
+            
+            // Clear the form fields
+            $('#signupForm')[0].reset();
+        }
+    });
+});
+    </script>
+</body>
+</html>

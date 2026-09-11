@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/glass-panel.css">
+</head>
+<body>
+   
+  <input type="checkbox" id="login-btn" hidden>
+  <nav class="main_nav">
+    <input type="checkbox" id="hamburger" hidden>
+    <label for="hamburger" class="hamburger-icon_m">
+        <svg viewBox="0 0 24 24" width="35" height="35" stroke="#00ffff" stroke-width="2" fill="none">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </label>
+    
+    <ul class="nav_link">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="">Media</a></li>
+        <li><a href="about us.html">About</a></li>
+        <li><a href="sign up.html">Sign Up</a></li>
+        <li><a href="../HTML/contact.html">Contact Us</a></li>
+        <label id="lgin" for="login-btn">Log In</label>
+    </ul>
+  </nav>  
+
+  <div class="outer_glass">
+    <label for="login-btn" id="hiddenlabel"></label>
+    <div class="glass_panel">
+      <h2>Log In</h2>
+      <form action=""> 
+        <input type="text" id="user" class="loginput" placeholder="Enter your username" required>
+        <br>
+        <input type="password" id="pass" class="loginput" placeholder="Enter password" required>
+        <br>
+        <button type="submit" class="loginput" id="lginbut">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="mb-4">Latest Transmissions</h2>
+    <!-- Injection Target -->
+    <div id="news-container"></div>
+  </div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
+ 
+ <script>
+  $(document).ready(function() {
+      const newsArticles = [
+          {
+              title: "AI causing a huge cost spike",
+              image: "../img/ai cost.png", 
+              description: "High demand on memory from the AI industry caused a high price spike for the entire tech industry."
+          },
+          {
+              title: "iPhone Duo: Apple's first foldable",
+              image: "../img/iphone duo.png",
+              description: "Apple's first step into the foldables market. Will this make Apple a fierce competitor in the AI race?"
+          },
+          {
+              title: "Samsung releases new foldables: Z-Fold 8 and Z-Flip 8",
+              image: "../img/zfold.png",
+              description: "Samsung released their new foldables with a redesign. Will this fix Samsung's foldables?"
+          }
+      ];
+
+      // Processing Loop
+      $.each(newsArticles, function(index, article) {
+          // HTML Construction
+          const articleRow = `
+              <div class="row align-items-center bg-white shadow-sm p-3 mb-4 rounded">
+                  <div class="col-md-4">
+                      <img src="${article.image}" class="img-fluid rounded" alt="${article.title}">
+                  </div>
+                  <div class="col-md-8">
+                      <h4 class="custom-primary-text">${article.title}</h4>
+                      <p class="text-muted">${article.description}</p>
+                      <button class="btn custom-outline-btn btn-sm">Read Full Report</button>
+                  </div>
+              </div>
+          `;
+          $('#news-container').append(articleRow);
+      });
+
+      // Batch style application post-render
+      $('.custom-outline-btn').css({
+          'color': '#0a9396',
+          'border': '2px solid #0a9396'
+      });
+      $('.custom-primary-text').css({
+          'color': '#0a9396'
+      });
+  });
+  </script>
+</body>
+</html>
