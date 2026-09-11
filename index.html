@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tech news</title>
+    <link rel="stylesheet" href="../CSS/all.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/glass-panel.css">
+</head>
+<body>
+  <input type="checkbox" id="login-btn" hidden>
+  <nav class="main_nav">
+    <input type="checkbox" id="hamburger" hidden>
+    <label for="hamburger" class="hamburger-icon"><svg viewBox="0 0 24 24" width="35" height="35" stroke="#00ffff" stroke-width="2" fill="none">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg></label>
+    <ul class="nav_link"><li><a href="index.html">Home</a></li>
+<li><a href="../HTML/media.html">media</a></li>
+<li><a href="about us.html">about</a></li>
+<li><a href="sign up.html">sign up</a></li>
+<li><a href="../HTML/contact.html">contact us</a></li>
+<label id="lgin" for="login-btn">log in</label></ul>
+  </nav>  
+  <header><h1>Tech News your portal to everything tech</h1></header>
+  <div id="arrows"><div class="hologram-arrow" id="l-arrow"> 
+    <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+        <polyline points="15 18 9 12 15 6"></polyline>
+    </svg></div>
+  <input type="radio" name="carousel" id="left" hidden>
+  <div class="hologram-arrow" id="r-arrow">
+    <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg></div>
+  <input type="radio" name="carousel" id="right" hidden>
+<div class="carousel">
+  <input type="radio" id="card1" name="slider"  checked hidden >
+  <input type="radio" id="card2"  name="slider"     hidden >
+  <input type="radio" id="card3"   name="slider"    hidden >
+  <label for="card1" class="holo-card"><img src="../img/ai cost.png" alt=""></label>
+  
+  <label for="card2" class="holo-card"><img src="../img/iphone duo.png" alt=""></label>
+  
+  <label for="card3" class="holo-card"><img src="../img/zfold.png" alt=""></label>
+</div></div>
+<div class="outer_glass" >
+  <label for="login-btn" id="hiddenlabel"></label>
+  <div class="glass_panel">
+    
+    <h2>log in</h2>
+   <form action=""> <input type="text" id="user" class="loginput" placeholder="Enter your username" required>
+    <br>
+    <input type="password" id="pass" class="loginput" placeholder="Enter password" required>
+    <br>
+    <button type="submit" class="loginput" id="lginbut">log in</button></form>
+
+  </div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
+<section><section class="content-section">
+      <h2>Our Story</h2>
+      <a href="about us.html" class="sleek-btn">About Us</a>
+  </section>
+
+  <section class="content-section">
+      <h2>New here? Sign up so nothing misses you.</h2>
+      <a href="sign up.html" class="sleek-btn">Sign Up</a>
+  </section>
+</section>
+  <footer><p>&copy; all rights reserved for tech CO</p></footer>
+ <script>
+       
+        const leftArrow = document.getElementById('l-arrow');
+        const rightArrow = document.getElementById('r-arrow');
+        
+       
+        const cards = [
+            document.getElementById('card1'),
+            document.getElementById('card2'),
+            document.getElementById('card3')
+        ];
+        
+        let currentIndex = 0; 
+ 
+        rightArrow.onclick = function() {
+            currentIndex++; 
+            if (currentIndex > 2) { 
+                currentIndex = 0; 
+            }
+            cards[currentIndex].checked = true; 
+        };
+    
+        leftArrow.onclick = function() {
+            currentIndex--; 
+            if (currentIndex < 0) { 
+                currentIndex = 2; 
+            }
+            cards[currentIndex].checked = true; 
+        };
+    </script>
+</body>
+</html>
